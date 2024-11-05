@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <div className="products-wrapper flex w-full flex-wrap justify-between gap-4 px-[10px] pt-[30px]">
+      <div className="products-wrapper flex w-full flex-wrap items-center justify-center gap-4 px-[10px] pt-[30px]">
         {data.map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}

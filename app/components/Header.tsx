@@ -7,7 +7,13 @@ export default function Header() {
       <div className="flex flex-col items-center">
         <div className="flex w-full flex-row justify-between p-5">
           <div>
-            <Image src={`/saidam-logo.png`} alt={'saidam-logo'} width={100} height={50} />
+            <Image
+              src={`/nordway-logo.png`}
+              alt={'nordway-logo'}
+              width={100}
+              height={50}
+              className="rounded-xl"
+            />
           </div>
           <div className="flex items-center">
             <h5>онлайн-каталог</h5>

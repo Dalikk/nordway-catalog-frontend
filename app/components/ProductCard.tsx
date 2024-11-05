@@ -1,27 +1,42 @@
 import Image from 'next/image';
+import React from 'react';
 
-export default function ProductCard() {
+interface IProductCardProps {
+  name: string;
+  description: string;
+  imageURL: string;
+  price: number;
+}
+
+interface IProductCard {
+  product: IProductCardProps;
+}
+
+const ProductCard: React.FC<IProductCard> = ({ product }) => {
   return (
-    <div className="flex w-[175px] flex-col">
+    <div className="flex h-[353.33px] w-[175px] flex-col justify-between">
       <div>
-        x`
         <Image
-          src={`/products/shpatlevka-gerkules.jpeg`}
-          alt="shpatlevka-gerkules"
+          src={product.imageURL}
+          alt={product.name}
           width={175}
           height={233}
           className="rounded-xl"
         />
       </div>
-      <div>
-        <div className="price">
-          <p className="text-2xl font-bold">890 руб</p>
+      <div className="flex h-full flex-col justify-between">
+        <div>
+          <div className="price">
+            <p className="text-2xl font-bold">{product.price} руб</p>
+          </div>
+          <div className="product-name leading-5">{product.name}</div>
         </div>
-        <div className="product-name leading-5">Шпаклевка финишная полимерная GT-53 GERKULES</div>
-      </div>
-      <div className="h-7 w-full rounded-xl bg-black">
-        <p className="text-center font-bold text-white">To cart</p>
+        <div className="h-7 w-full rounded-xl bg-black">
+          <p className="text-center font-bold text-white">To cart</p>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default ProductCard;
